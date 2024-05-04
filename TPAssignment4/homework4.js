@@ -293,8 +293,14 @@ function validateDob() {
             return true;
         }
     }
-  var formoutput = “”;
-  document.addEventListener("DOMContentLoaded", function() {
+
+
+    // Review User Input //
+    function reviewInput() {
+         var formcontent = document.getElementById('clientForm').elements;
+         for (var x = 0; x < formontent.elements.length; x++ )
+    
+    var formoutput;
     var formcontent = document.getElementById('clientForm').elements;
   for (i = 0; i < formcontent.length; i++) {
         if (formcontent.elements[i].value != "") {
@@ -337,11 +343,19 @@ function validateDob() {
                 }
             }
         }
-        formoutput += "</table>";
+        
+      
+      
+      formoutput += "</table>";
         document.getElementById("output").innerHTML = formoutput;
+        
+        
+        
+        
+        
+        
 
-    // Review User Input //
-    function reviewInput() {
+        
         var alertBox = document.getElementById("alert-box");
         var closeBtn = document.getElementById("close-alert");
         alertBox.style.display = "block";
@@ -349,7 +363,9 @@ function validateDob() {
               alertBox.style.display = "none";
          }};
      
-         function validateAll() {
+         
+
+function validateAll() {
              let valid = true;
      
              if (!validateFname()) {
