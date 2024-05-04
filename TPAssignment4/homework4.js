@@ -295,74 +295,64 @@ function validateDob() {
     }
 
 
-    // Review User Input //
-    function reviewInput() {
-         var formcontent = document.getElementById('clientForm').elements;
-         for (var x = 0; x < formontent.elements.length; x++ )
-    
-    var formoutput;
+  function reviewInput() {
     var formcontent = document.getElementById('clientForm').elements;
-  for (i = 0; i < formcontent.length; i++) {
-        if (formcontent.elements[i].value != "") {
-            datatype = formcontent.elements[i].type;
+    var formoutput = "<table>"; // Initialize formoutput variable with "<table>" tag
+
+    for (var i = 0; i < formcontent.length; i++) {
+        if (formcontent[i].value !== "") {
+            var datatype = formcontent[i].type;
+
             switch (datatype) {
                 case "checkbox":
-                    if (formcontent.elements[i].checked) {
+                    if (formcontent[i].checked) {
                         formoutput +=
                             "<tr><td align='right'>" +
-                            formcontent.elements[i].name +
+                            formcontent[i].name +
                             "</td>";
                         formoutput += "<td class='outputdata'>&#x2713;</td></tr>";
                     }
-                        break;
-                    case "radio":
-                        if (formcontent.elements[i].checked) {
-                            formoutput +=
-                                "<tr><td align='right'>" +
-                                formcontent.elements[i].name +
-                                "</td>";
-                            formoutput +=
-                                "<td class='outputdata'>" +
-                                formcontent.elements[i].value +
-                                "</td></tr>";
-                        }
-                        break;
-                    case "button":
-                    case "submit":
-                    case "reset":
-                        break;
-                    default:
+                    break;
+                case "radio":
+                    if (formcontent[i].checked) {
                         formoutput +=
                             "<tr><td align='right'>" +
-                            formcontent.elements[i].name +
+                            formcontent[i].name +
                             "</td>";
                         formoutput +=
-                            "<td class='outputdata'>" + 
-                            formcontent.elements[i].value +
+                            "<td class='outputdata'>" +
+                            formcontent[i].value +
                             "</td></tr>";
-                }
+                    }
+                    break;
+                case "button":
+                case "submit":
+                case "reset":
+                    break;
+                default:
+                    formoutput +=
+                        "<tr><td align='right'>" +
+                        formcontent[i].name +
+                        "</td>";
+                    formoutput +=
+                        "<td class='outputdata'>" +
+                        formcontent[i].value +
+                        "</td></tr>";
             }
         }
-        
-      
-      
-      formoutput += "</table>";
-        document.getElementById("output").innerHTML = formoutput;
-        
-        
-        
-        
-        
-        
+    }
 
-        
-        var alertBox = document.getElementById("alert-box");
-        var closeBtn = document.getElementById("close-alert");
-        alertBox.style.display = "block";
-        closeBtn.onclick = function() {
-              alertBox.style.display = "none";
-         }};
-     
+    formoutput += "</table>"; // Close the table tag
+    document.getElementById("output").innerHTML = formoutput;
+
+    var alertBox = document.getElementById("alert-box");
+    var closeBtn = document.getElementById("close-alert");
+    alertBox.style.display = "block";
+    closeBtn.onclick = function() {
+        alertBox.style.display = "none";
+    };
+}
+
          
 
 function validateAll() {
