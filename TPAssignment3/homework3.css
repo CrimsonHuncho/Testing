@@ -1,0 +1,62 @@
+body {
+    margin: 0;
+    background-color:#eef5f5f8;
+    font-size: 25px;
+    font-family: Arial, sans-serif; /* Use a more modern font for the body */
+    color: #333; /* Dark grey color for text */
+    line-height: 1.6; /* Improve readability */
+}
+
+img {
+    display: block; /* Remove the line break after the image */
+    max-width: 100%; /* Make the image responsive */
+    height: auto; /* Maintain the image's aspect ratio */
+    margin-left: 0; 
+}
+
+/* Font Style */
+h1 {
+    font-family: 'Times New Roman', Times, serif;
+    color:black;
+    padding-top: 20px;
+    padding-right: 20px;
+    margin-top: 0px;
+    text-align: center;
+    font-size: 2em; /* Make the title bigger */
+}
+
+.tdl {
+    text-align: right;
+    padding-right: 10px; /* Add some space to the right */
+}
+
+/* Add some styles for the table */
+table {
+    width: 100%; /* Make the table full width */
+    border-collapse: collapse; /* Collapse borders */
+    background-color: hwb(175 5% 17% / 0); /* Set a background */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+}
+
+td, th {
+    border: 1px solid hsl(194, 100%, 49%); /* Add borders to cells */
+    padding: 8px; /* Add some padding */
+    text-align: left; /* Align text to the left */
+}
+
+th {
+    background-color: #f4f4f4; /* Add a light grey background to headers */
+    text-transform: uppercase; /* Make headers uppercase */
+}
+body {
+    text-align: center; /* Center text and inline-block elements */
+}
+
+img {
+    display: block; /* Make the image a block element */
+    margin-left: auto; /* Automatic left margin */
+    margin-right: auto; /* Automatic right margin */
+    width: 500px; /* Adjust as needed */
+    height: auto; /* Maintain aspect ratio */
+}
+
